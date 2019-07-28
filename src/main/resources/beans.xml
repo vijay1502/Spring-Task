@@ -4,13 +4,13 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- bean definitions here -->
-    <bean id="movie1" class="com.stackroute.domain.Movie" autowire="byType">
-
+    <bean id="actor" class="com.stackroute.domain.Actor">
+        <constructor-arg type="String" value="Vijay"></constructor-arg>
+        <constructor-arg type="String" value="male"></constructor-arg>
+        <constructor-arg type="int" value="22"></constructor-arg>
     </bean>
-    <bean id="movie2" class="com.stackroute.domain.Movie" autowire="byName">
-
-    </bean>
-    <bean id="movie3" class="com.stackroute.domain.Movie" autowire="constructor">
-
+    <bean id="movie" class="com.stackroute.domain.Movie">
+        <property name="movieName" value="Vijay"></property>
+        <property name="actor" ref="actor"></property>
     </bean>
 </beans>
