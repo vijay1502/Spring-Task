@@ -14,25 +14,19 @@ import org.springframework.core.io.Resource;
 public class App 
 {
     public static void main( String[] args )
-    {
-        ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
-        Actor act=context.getBean("actor",Actor.class);
-        Movie movie=context.getBean("movie",Movie.class);
-        System.out.println(act.getAge());
-        System.out.println(act.getGender());
-        System.out.println(act.getName());
-        act.actorVijay();
+    {ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
+        Actor actor1=context.getBean("actor1",Actor.class);
+        Actor actor2=context.getBean("actor2",Actor.class);
+        Actor actor3=context.getBean("actor3",Actor.class);
+        Movie movie1=context.getBean("movie1",Movie.class);
+        Movie movie2=context.getBean("movie2",Movie.class);
 
-        System.out.println(movie.getActor().getGender());
-        System.out.println(movie.getActor().getAge());
-        System.out.println(movie.getActor().getName());
-        System.out.println(movie.getMovieName());
-        //Using Bean Factory
-        Resource resource = new ClassPathResource("beans.xml");
-        BeanFactory bean=new XmlBeanFactory(resource);
-        Actor acting=(Actor) context.getBean("actor");
-        System.out.println(acting.getGender());
-        acting.getName();
-        acting.getAge();
+        System.out.println(actor1.toString());
+        System.out.println(actor2.toString());
+        System.out.println(actor3.toString());
+        System.out.println(actor1==actor2);
+        System.out.println(movie1.getActor1());
+        System.out.println(movie2.getActor2());
+        System.out.println(movie1==movie2);
     }
 }
